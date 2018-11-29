@@ -28,8 +28,8 @@ def scrape_list_page(response):
 def scrape_detail_page(response):
     root = lxml.html.fromstring(response.content)
     bookInfo = {
-        'ì œëª©' : root.cssselect('.pwrap_bgtit a.p_topt01')[0].text_content(),
-        'ê°€ê²©' : root.cssselect('.p_goodstd02 span.p_new_price_ph')[0].text_content(),
+        'title' : root.cssselect('.pwrap_bgtit a.p_topt01')[0].text_content(),
+        'price' : root.cssselect('.p_goodstd02 span.p_new_price_ph')[0].text_content(),
     }
     return bookInfo
 
